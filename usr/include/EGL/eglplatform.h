@@ -35,7 +35,7 @@
  */
 
 #include <KHR/khrplatform.h>
-#include <EGL/eglvivante.h>
+//#include <EGL/eglvivante.h>
 
 /* Macros used in EGL function prototype declarations.
  *
@@ -67,6 +67,14 @@
  * portability of applications using EGL running on different EGL
  * implementations.
  */
+
+/* X11 (tentative)  */
+#include <X11/Xlib.h>
+#include <X11/Xutil.h>
+
+typedef Display *EGLNativeDisplayType;
+typedef Pixmap   EGLNativePixmapType;
+typedef Window   EGLNativeWindowType;
 
 /* EGL 1.2 types, renamed for consistency in EGL 1.3 */
 typedef EGLNativeDisplayType NativeDisplayType;
